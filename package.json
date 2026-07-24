@@ -1,0 +1,40 @@
+{
+  "name": "zentrid-end-user",
+  "version": "1.9.1",
+  "private": true,
+  "type": "commonjs",
+  "scripts": {
+    "clean": "node scripts/clean-dist.js",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "build:browser": "node scripts/build-browser.js",
+    "build:server": "tsc -p tsconfig.server.build.json",
+    "copy:static": "node scripts/copy-static.js",
+    "build:css": "node scripts/build-css.js",
+    "build:release": "node scripts/generate-release-manifest.js --target=local",
+    "check:end-user": "node scripts/check-end-user.js",
+    "check:dist": "node scripts/check-dist.js",
+    "build": "npm run clean && npm run typecheck && npm run build:browser && npm run build:server && npm run copy:static && npm run build:css && npm run build:release && npm run check:end-user && npm run check:dist",
+    "start": "npm run build && node dist/proxy-server.js",
+    "dev": "npm run start",
+    "check:registry": "node scripts/check-package-registry.js",
+    "check:vercel-config": "node scripts/check-vercel-config.js",
+    "check:vercel-dist": "node scripts/check-dist.js --target=vercel",
+    "build:release:vercel": "node scripts/generate-release-manifest.js --target=vercel",
+    "build:vercel": "npm run clean && npm run typecheck && npm run build:browser && npm run copy:static && npm run build:css && npm run build:release:vercel && npm run check:vercel-config && npm run check:vercel-dist",
+    "verify:vercel": "npm run check:registry && npm run build:vercel"
+  },
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  },
+  "engines": {
+    "node": ">=22 <25",
+    "npm": ">=10"
+  },
+  "packageManager": "npm@11.16.0",
+  "zentridWorkspace": "end-user-standalone",
+  "zentridRelease": "v1.9.1"
+}

@@ -1,0 +1,21 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "noEmit": false,
+    "outDir": "dist",
+    "declaration": false,
+    "sourceMap": false,
+    "noEmitOnError": true,
+    "module": "commonjs"
+  },
+  "include": [
+    "proxy-server.ts",
+    "types/**/*.d.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    ".ts-build",
+    "assets/js/**/*.ts"
+  ]
+}
