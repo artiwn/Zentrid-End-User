@@ -1,0 +1,48 @@
+/* Content-aware layout safeguards for compact headers, metrics, actions and dynamically enhanced states. */
+.panel-head > div,
+.section-title-v17 > div,
+.metric-grid > div,
+.api-check-grid > article,
+.api-check-grid > section {
+  min-width: 0;
+}
+
+.panel-head h1,
+.panel-head h2,
+.panel-head h3,
+.panel-head p,
+.panel-head code,
+.section-title-v17 h1,
+.section-title-v17 h2,
+.section-title-v17 h3,
+.section-title-v17 p,
+.metric-grid span,
+.metric-grid strong,
+.metric-grid small {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
+.panel-head code {
+  white-space: normal;
+}
+
+.panel-head > .badge,
+.panel-head > button {
+  flex: 0 0 auto;
+}
+
+.fleet-ux-state-copy {
+  min-width: 0;
+  max-width: 100%;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+
+.fleet-ux-state-copy > strong,
+.fleet-ux-state-copy > span,
+.fleet-ux-state-copy > small,
+.fleet-ux-state-copy > p {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}

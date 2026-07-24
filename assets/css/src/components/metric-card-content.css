@@ -1,0 +1,22 @@
+/* KPI content */
+.kpi-card {
+  display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start;
+  gap: 8px; min-width: 0; isolation: isolate;
+}
+.kpi-card > * { position: relative; z-index: 1; max-width: 100%; }
+.kpi-card > span:not(.kpi-icon),
+.kpi-card .kpi-label {
+  display: block; color: var(--muted); font-size: 13px; font-weight: 750;
+  line-height: 1.25; margin: 0;
+}
+.kpi-card > strong,
+.kpi-card .kpi-value {
+  display: block; color: var(--text); font-size: clamp(24px, 2.2vw, 32px); font-weight: 900;
+  letter-spacing: -0.04em; line-height: 1.08; margin: 4px 0 0; overflow-wrap: anywhere;
+}
+.kpi-card > small,
+.kpi-card .kpi-delta {
+  color: #aabacf; font-size: 12px; line-height: 1.35;
+  margin-top: 2px; overflow-wrap: anywhere;
+}
+.kpi-card .kpi-delta { display: block; }

@@ -1,0 +1,73 @@
+/* Shared Zentrid shell details reused by the standalone End User portal. */
+.dropdown-title {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 850;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  padding: 8px 10px;
+}
+
+.toast {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 100;
+  opacity: 0;
+  color: var(--text);
+  background: rgba(12, 24, 44, .96);
+  border: 1px solid rgba(34, 211, 238, .24);
+  box-shadow: var(--shadow);
+  transition: opacity .2s ease, transform .2s ease;
+  pointer-events: none;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.primary-action,
+.secondary-action,
+.icon-btn,
+.context-pill,
+.notification-btn,
+.profile-btn,
+.plant-context,
+.owner-period-pills button,
+.owner-secondary-strip > button,
+.kpi-card {
+  transition: transform .18s ease, border-color .18s ease, background-color .18s ease, box-shadow .18s ease;
+}
+
+.primary-action:focus-visible,
+.secondary-action:focus-visible,
+.icon-btn:focus-visible,
+.context-pill:focus-visible,
+.notification-btn:focus-visible,
+.profile-btn:focus-visible,
+.plant-context:focus-visible,
+.owner-period-pills button:focus-visible,
+.owner-secondary-strip > button:focus-visible,
+.kpi-card:focus-visible {
+  outline: 3px solid rgba(34, 211, 238, .72);
+  outline-offset: 3px;
+}
+
+.login-form > .primary-action {
+  width: 100%;
+  min-height: 46px;
+  justify-content: center;
+  margin-top: 2px;
+}
+
+.login-card .brand-mark {
+  flex: 0 0 44px;
+}
+
+@media (max-width: 620px) {
+  .login-shell { padding: 18px; }
+  .login-card { padding: 22px; border-radius: 22px; }
+  .login-brand h1 { font-size: 29px; }
+}

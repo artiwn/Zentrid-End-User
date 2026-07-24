@@ -1,0 +1,29 @@
+/* Shared card surface primitives; internal layouts remain page-owned. */
+.panel,
+.panel-lite,
+.kpi-card,
+.module-card { padding: 18px; }
+
+.panel,
+.kpi-card,
+.module-card { border-radius: var(--radius); }
+
+.kpi-card,
+.module-card { position: relative; overflow: hidden; }
+
+.glass-card,
+.kpi-card { border: 1px solid var(--line); box-shadow: var(--shadow); }
+
+.glass-card {
+  background: linear-gradient(180deg, rgba(16, 31, 54, .82), rgba(9, 20, 37, .72));
+  backdrop-filter: blur(18px);
+}
+.panel { min-height: 300px; }
+.panel-lite { min-width: 0; border: 1px solid rgba(148,163,184,.12); border-radius: 20px; background: rgba(255,255,255,.035); }
+.kpi-card { min-height: 164px; background: var(--panel); }
+
+@media (max-width: 620px) {
+  .panel,
+  .glass-card,
+  .kpi-card { border-radius: 18px; }
+}

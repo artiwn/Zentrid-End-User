@@ -1,0 +1,368 @@
+/* Zentrid End User — Sales & Revenue */
+.owner-revenue-hero { align-items: center; }
+
+.owner-revenue-context {
+  display: grid;
+  grid-template-columns: repeat(4,minmax(0,1fr)) auto;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 16px;
+  padding: 14px;
+}
+.owner-revenue-context > div {
+  min-width: 0;
+  min-height: 62px;
+  padding: 11px 13px;
+  border: 1px solid rgba(148,163,184,.1);
+  border-radius: 14px;
+  background: rgba(255,255,255,.028);
+}
+.owner-revenue-context span,
+.owner-revenue-context strong { display: block; }
+.owner-revenue-context span { margin-bottom: 5px; color: var(--muted); font-size: 11px; }
+.owner-revenue-context strong { overflow-wrap: anywhere; }
+
+.owner-revenue-workspace {
+  display: grid;
+  grid-template-columns: 250px minmax(0,1fr);
+  gap: 16px;
+  align-items: start;
+}
+.owner-revenue-sidebar {
+  position: sticky;
+  top: calc(var(--topbar-height) + 18px);
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  background: linear-gradient(180deg,rgba(15,28,49,.88),rgba(8,18,33,.88));
+  box-shadow: var(--shadow);
+}
+.owner-revenue-sidebar-title { padding: 7px 8px 14px; }
+.owner-revenue-sidebar-title span,
+.owner-revenue-sidebar-title strong { display: block; }
+.owner-revenue-sidebar-title span { margin-bottom: 5px; color: var(--muted); font-size: 11px; text-transform: uppercase; letter-spacing: .1em; font-weight: 850; }
+.owner-revenue-sidebar-title strong { font-size: 17px; }
+.owner-revenue-sidebar nav { display: grid; gap: 7px; }
+.owner-revenue-sidebar nav button {
+  width: 100%;
+  min-width: 0;
+  min-height: 66px;
+  display: grid;
+  grid-template-columns: 38px minmax(0,1fr);
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  color: inherit;
+  text-align: left;
+  border: 1px solid transparent;
+  border-radius: 15px;
+  background: transparent;
+}
+.owner-revenue-sidebar nav button:hover { border-color: rgba(34,211,238,.16); background: rgba(34,211,238,.045); }
+.owner-revenue-sidebar nav button.active { border-color: rgba(34,211,238,.25); background: linear-gradient(135deg,rgba(34,211,238,.11),rgba(96,165,250,.07)); }
+.owner-revenue-sidebar nav button > span:last-child,
+.owner-revenue-sidebar nav button strong,
+.owner-revenue-sidebar nav button small { min-width: 0; display: block; }
+.owner-revenue-sidebar nav button small { margin-top: 4px; color: var(--muted); font-size: 11px; line-height: 1.35; }
+.owner-revenue-tab-icon { width: 38px; height: 38px; display: grid; place-items: center; border-radius: 12px; background: rgba(96,165,250,.1); color: var(--cyan); font-size: 17px; font-weight: 900; }
+.owner-revenue-sidebar nav button.active .owner-revenue-tab-icon { background: linear-gradient(135deg,rgba(34,211,238,.21),rgba(96,165,250,.18)); }
+.owner-revenue-readonly { margin-top: 14px; padding: 13px; border: 1px solid rgba(167,139,250,.16); border-radius: 15px; background: rgba(167,139,250,.055); }
+.owner-revenue-readonly span,
+.owner-revenue-readonly strong { display: block; }
+.owner-revenue-readonly span { margin-bottom: 5px; color: #c4b5fd; font-size: 11px; }
+.owner-revenue-readonly strong { font-size: 12px; line-height: 1.45; }
+
+.owner-revenue-main { min-width: 0; }
+.owner-revenue-view { display: grid; gap: 16px; }
+.owner-revenue-view-head {
+  min-height: 88px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 20px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: rgba(14,26,46,.62);
+}
+.owner-revenue-view-head h2 { margin: 0 0 6px; }
+.owner-revenue-view-head p:not(.eyebrow) { color: var(--muted); line-height: 1.5; }
+.owner-revenue-view-head select {
+  min-width: 190px;
+  min-height: 42px;
+  padding: 0 38px 0 13px;
+  color: var(--text);
+  border: 1px solid var(--line);
+  border-radius: 13px;
+  background: #0d1a2d;
+}
+.owner-revenue-view-head select option { color: var(--text); background: #0d1a2d; }
+
+.owner-revenue-kpi-grid,
+.owner-revenue-payment-kpis { margin: 0; }
+.owner-revenue-kpi-grid .kpi-card,
+.owner-revenue-payment-kpis .kpi-card { min-height: 152px; }
+.owner-revenue-text-value { font-size: clamp(20px,2.3vw,27px) !important; line-height: 1.1; }
+
+.owner-revenue-overview-grid,
+.owner-revenue-lower-grid,
+.owner-revenue-settlement-grid,
+.owner-revenue-agreement-grid {
+  display: grid;
+  gap: 16px;
+}
+.owner-revenue-overview-grid { grid-template-columns: minmax(0,1.2fr) minmax(330px,.8fr); }
+.owner-revenue-lower-grid { grid-template-columns: minmax(0,1.35fr) minmax(320px,.65fr); }
+.owner-revenue-settlement-grid { grid-template-columns: minmax(0,1.25fr) minmax(330px,.75fr); }
+.owner-revenue-agreement-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+.owner-revenue-overview-grid > .panel,
+.owner-revenue-lower-grid > .panel,
+.owner-revenue-settlement-grid > .panel,
+.owner-revenue-agreement-grid > .panel { min-width: 0; min-height: 0; }
+
+.owner-revenue-current-card,
+.owner-revenue-summary-card,
+.owner-revenue-settlement-summary { display: flex; flex-direction: column; }
+.owner-revenue-current-total,
+.owner-revenue-year-total {
+  padding: 18px;
+  margin: 4px 0 14px;
+  border: 1px solid rgba(52,211,153,.16);
+  border-radius: 18px;
+  background: linear-gradient(135deg,rgba(52,211,153,.09),rgba(34,211,238,.045));
+}
+.owner-revenue-current-total span,
+.owner-revenue-current-total small,
+.owner-revenue-year-total span,
+.owner-revenue-year-total small { display: block; color: var(--muted); font-size: 12px; line-height: 1.45; }
+.owner-revenue-current-total strong,
+.owner-revenue-year-total strong { display: block; margin: 6px 0; font-size: clamp(31px,4vw,46px); letter-spacing: -.045em; overflow-wrap: anywhere; }
+.owner-revenue-progress { height: 10px; margin-bottom: 15px; overflow: hidden; border-radius: 999px; background: rgba(148,163,184,.14); }
+.owner-revenue-progress span { display: block; height: 100%; border-radius: inherit; background: linear-gradient(90deg,var(--green),var(--cyan)); }
+.owner-revenue-progress-76 { width: 76%; }
+.owner-revenue-progress-77 { width: 77%; }
+
+.information-grid.owner-revenue-current-grid,
+.information-grid.owner-revenue-year-grid,
+.information-grid.owner-revenue-agreement-info,
+.information-grid.owner-revenue-document-info {
+  display: grid;
+  gap: 10px;
+}
+.information-grid.owner-revenue-current-grid,
+.information-grid.owner-revenue-year-grid,
+.information-grid.owner-revenue-agreement-info,
+.information-grid.owner-revenue-document-info { grid-template-columns: repeat(2,minmax(0,1fr)); }
+.information-grid.owner-revenue-current-grid > div,
+.information-grid.owner-revenue-year-grid > div,
+.information-grid.owner-revenue-agreement-info > div,
+.information-grid.owner-revenue-document-info > div {
+  min-width: 0;
+  min-height: 92px;
+  padding: 14px;
+  border: 1px solid rgba(148,163,184,.11);
+  border-radius: 16px;
+  background: rgba(255,255,255,.032);
+}
+.information-grid.owner-revenue-current-grid span,
+.information-grid.owner-revenue-current-grid small,
+.information-grid.owner-revenue-year-grid span,
+.information-grid.owner-revenue-year-grid small,
+.information-grid.owner-revenue-agreement-info span,
+.information-grid.owner-revenue-agreement-info small,
+.information-grid.owner-revenue-document-info span,
+.information-grid.owner-revenue-document-info small { display: block; color: var(--muted); font-size: 12px; line-height: 1.45; }
+.information-grid.owner-revenue-current-grid strong,
+.information-grid.owner-revenue-year-grid strong,
+.information-grid.owner-revenue-agreement-info strong,
+.information-grid.owner-revenue-document-info strong { display: block; margin: 6px 0 5px; overflow-wrap: anywhere; }
+.owner-revenue-summary-card > .primary-action,
+.owner-revenue-settlement-summary > .primary-action { margin-top: auto; align-self: flex-start; }
+
+.owner-revenue-pending-note,
+.owner-revenue-readonly-banner {
+  display: grid;
+  grid-template-columns: 38px minmax(0,1fr);
+  gap: 12px;
+  align-items: start;
+  margin-top: 14px;
+  padding: 13px 14px;
+  border: 1px solid rgba(250,204,21,.18);
+  border-radius: 15px;
+  background: rgba(250,204,21,.055);
+}
+.owner-revenue-pending-note > span,
+.owner-revenue-readonly-banner > span { width: 38px; height: 38px; display: grid; place-items: center; border-radius: 12px; background: rgba(250,204,21,.12); color: var(--yellow); font-weight: 900; }
+.owner-revenue-pending-note strong,
+.owner-revenue-pending-note p,
+.owner-revenue-readonly-banner strong,
+.owner-revenue-readonly-banner p { display: block; }
+.owner-revenue-pending-note p,
+.owner-revenue-readonly-banner p { margin-top: 5px; color: var(--muted); font-size: 12px; line-height: 1.5; }
+.owner-revenue-readonly-banner { margin-top: 0; border-color: rgba(167,139,250,.18); background: rgba(167,139,250,.055); }
+.owner-revenue-readonly-banner > span { background: rgba(167,139,250,.13); color: #c4b5fd; }
+
+.owner-revenue-chart-wrap { min-height: 280px; overflow: hidden; }
+.owner-revenue-chart-svg { width: 100%; height: 270px; overflow: visible; }
+.owner-revenue-chart-grid line { stroke: rgba(148,163,184,.13); stroke-width: 1; }
+.owner-revenue-chart-area { fill: url(#ownerRevenueArea); }
+.owner-revenue-chart-gross,
+.owner-revenue-chart-paid { fill: none; stroke-linecap: round; stroke-linejoin: round; }
+.owner-revenue-chart-gross { stroke: var(--green); stroke-width: 4; }
+.owner-revenue-chart-paid { stroke: var(--cyan); stroke-width: 3; stroke-dasharray: 8 8; }
+.owner-revenue-chart-dot { fill: #07111f; stroke: var(--green); stroke-width: 3; }
+.owner-revenue-chart-labels { fill: #91a4bc; font-size: 11px; }
+.owner-revenue-chart-legend { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 5px; color: var(--muted); font-size: 12px; }
+.owner-revenue-chart-legend span { display: inline-flex; align-items: center; gap: 8px; }
+.owner-revenue-chart-legend i { width: 28px; height: 3px; border-radius: 999px; background: var(--green); }
+.owner-revenue-chart-legend .paid i { background: var(--cyan); }
+
+.owner-revenue-payment-list { display: grid; gap: 9px; }
+.owner-revenue-payment-list > button {
+  min-width: 0;
+  min-height: 72px;
+  display: grid;
+  grid-template-columns: 42px minmax(0,1fr) auto;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 13px;
+  color: inherit;
+  text-align: left;
+  border: 1px solid rgba(148,163,184,.1);
+  border-radius: 15px;
+  background: rgba(255,255,255,.028);
+}
+.owner-revenue-payment-list > button:hover { border-color: rgba(34,211,238,.24); background: rgba(34,211,238,.04); }
+.owner-revenue-payment-list strong,
+.owner-revenue-payment-list small { display: block; }
+.owner-revenue-payment-list small { margin-top: 4px; color: var(--muted); font-size: 11px; }
+.owner-revenue-payment-icon { width: 42px; height: 42px; display: grid; place-items: center; border-radius: 14px; background: rgba(52,211,153,.12); color: var(--green); font-weight: 900; }
+
+.owner-revenue-table-card { min-width: 0; }
+.owner-revenue-table { min-width: 0; overflow-x: auto; border: 1px solid rgba(148,163,184,.11); border-radius: 17px; }
+.owner-revenue-table-head,
+.owner-revenue-table-row {
+  display: grid;
+  grid-template-columns: minmax(135px,.85fr) repeat(2,minmax(125px,.75fr)) minmax(125px,.75fr) minmax(145px,.88fr) minmax(135px,.78fr) 96px;
+  gap: 12px;
+  align-items: center;
+  width: max-content;
+  min-width: 100%;
+  padding: 12px 14px;
+}
+.owner-revenue-table-head { min-width: 1040px; color: var(--muted); background: rgba(15,28,49,.82); font-size: 10px; font-weight: 900; letter-spacing: .1em; text-transform: uppercase; }
+.owner-revenue-table-row { min-width: 1040px; border-top: 1px solid rgba(148,163,184,.1); background: rgba(255,255,255,.018); }
+.owner-revenue-table-row:hover { background: rgba(34,211,238,.04); }
+.owner-revenue-table-row > div { min-width: 0; }
+.owner-revenue-table-row strong,
+.owner-revenue-table-row small { display: block; }
+.owner-revenue-table-row strong { overflow-wrap: anywhere; }
+.owner-revenue-table-row small { margin-top: 4px; color: var(--muted); font-size: 11px; line-height: 1.35; }
+.owner-revenue-table-row .row-actions { justify-content: flex-end; min-width: 0; }
+.owner-revenue-table-row .single-row-action { width: 100%; min-width: 0; padding-inline: 10px; }
+
+.owner-revenue-calculation-list { display: grid; gap: 9px; }
+.owner-revenue-calculation-list > div {
+  min-width: 0;
+  min-height: 70px;
+  display: grid;
+  grid-template-columns: minmax(0,1fr) auto;
+  align-items: center;
+  gap: 14px;
+  padding: 13px 15px;
+  border: 1px solid rgba(148,163,184,.1);
+  border-radius: 15px;
+  background: rgba(255,255,255,.028);
+  position: relative;
+  overflow: hidden;
+}
+.owner-revenue-calculation-list > div::before { content: ''; position: absolute; inset: 0 auto 0 0; width: 3px; background: var(--green); }
+.owner-revenue-calculation-list > div.debit::before { background: var(--yellow); }
+.owner-revenue-calculation-list > div.pending::before { background: var(--violet); }
+.owner-revenue-calculation-list strong,
+.owner-revenue-calculation-list small { display: block; }
+.owner-revenue-calculation-list small { margin-top: 5px; color: var(--muted); font-size: 11px; line-height: 1.4; }
+.owner-revenue-calculation-list b { white-space: nowrap; }
+.owner-revenue-calculation-list .debit b { color: #fbbf24; }
+.owner-revenue-calculation-list .pending b { color: #c4b5fd; }
+
+.owner-revenue-document-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 12px; }
+.owner-revenue-document-card {
+  min-width: 0;
+  display: grid;
+  grid-template-columns: 52px minmax(0,1fr) auto;
+  gap: 12px;
+  align-items: center;
+  padding: 16px;
+  border: 1px solid rgba(148,163,184,.11);
+  border-radius: 18px;
+  background: rgba(255,255,255,.03);
+}
+.owner-revenue-document-icon { width: 52px; height: 52px; display: grid; place-items: center; border-radius: 16px; background: rgba(96,165,250,.11); color: var(--cyan); font-size: 22px; }
+.owner-revenue-document-card span,
+.owner-revenue-document-card h3,
+.owner-revenue-document-card p { min-width: 0; }
+.owner-revenue-document-card > div:nth-child(2) > span { display: block; color: var(--muted); font-size: 11px; }
+.owner-revenue-document-card h3 { margin: 5px 0; }
+.owner-revenue-document-card p { color: var(--muted); font-size: 11px; line-height: 1.4; overflow-wrap: anywhere; }
+.owner-revenue-document-card .secondary-action { grid-column: 2 / -1; justify-self: start; }
+.owner-revenue-document-note { margin-bottom: 0; }
+
+@media (max-width: 1260px) {
+  .owner-revenue-context { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .owner-revenue-context > .secondary-action { justify-self: start; }
+  .owner-revenue-overview-grid,
+  .owner-revenue-lower-grid,
+  .owner-revenue-settlement-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 1020px) {
+  .owner-revenue-workspace { grid-template-columns: 1fr; }
+  .owner-revenue-sidebar { position: static; }
+  .owner-revenue-sidebar nav { grid-template-columns: repeat(3,minmax(0,1fr)); }
+  .owner-revenue-sidebar nav button { min-height: 72px; }
+  .owner-revenue-readonly { display: none; }
+}
+
+@media (max-width: 760px) {
+  .owner-revenue-context { grid-template-columns: 1fr; }
+  .owner-revenue-sidebar nav { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .owner-revenue-view-head { align-items: stretch; flex-direction: column; }
+  .owner-revenue-view-head select { width: 100%; }
+  .owner-revenue-agreement-grid,
+  .owner-revenue-document-grid { grid-template-columns: 1fr; }
+  .information-grid.owner-revenue-current-grid,
+  .information-grid.owner-revenue-year-grid,
+  .information-grid.owner-revenue-agreement-info,
+  .information-grid.owner-revenue-document-info { grid-template-columns: 1fr; }
+  .owner-revenue-chart-wrap { overflow-x: auto; }
+  .owner-revenue-chart-svg { min-width: 720px; }
+  .owner-revenue-table { overflow: visible; border: 0; }
+  .owner-revenue-table-head { display: none; }
+  .owner-revenue-table-row {
+    min-width: 0;
+    width: 100%;
+    grid-template-columns: 1fr;
+    gap: 0;
+    margin-bottom: 12px;
+    padding: 7px 14px;
+    border: 1px solid rgba(148,163,184,.11);
+    border-radius: 16px;
+  }
+  .owner-revenue-table-row > div { padding: 10px 0; border-top: 1px solid rgba(148,163,184,.09); }
+  .owner-revenue-table-row > div:first-child { border-top: 0; }
+  .owner-revenue-table-row > div::before { content: attr(data-label); display: block; margin-bottom: 5px; color: #7f94ad; font-size: 10px; font-weight: 900; letter-spacing: .11em; text-transform: uppercase; }
+  .owner-revenue-table-row .row-actions { justify-content: flex-start; }
+  .owner-revenue-table-row .single-row-action { width: auto; }
+}
+
+@media (max-width: 520px) {
+  .owner-revenue-sidebar nav { grid-template-columns: 1fr; }
+  .owner-revenue-payment-list > button { grid-template-columns: 42px minmax(0,1fr); }
+  .owner-revenue-payment-list > button .badge { grid-column: 2; justify-self: start; }
+  .owner-revenue-calculation-list > div { grid-template-columns: 1fr; }
+  .owner-revenue-calculation-list b { justify-self: start; }
+  .owner-revenue-document-card { grid-template-columns: 46px minmax(0,1fr); }
+  .owner-revenue-document-card > .badge { grid-column: 2; justify-self: start; }
+  .owner-revenue-document-card .secondary-action { grid-column: 2; }
+}

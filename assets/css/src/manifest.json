@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "output": "assets/css/styles.css",
+  "sources": [
+    "00-foundation.css",
+    "components/badge-base.css",
+    "components/card-surfaces.css",
+    "components/action-layouts.css",
+    "components/metric-card-content.css",
+    "components/information-grid-content.css",
+    "components/form-primitives.css",
+    "components/badge-tones.css",
+    "components/modal-drawer-shells.css",
+    "components/actions.css",
+    "components/ux-consistency.css",
+    "components/release-observability.css",
+    "components/content-resilience.css",
+    "components/end-user-shell-parity.css",
+    "90-end-user.css",
+    "91-end-user-plant.css",
+    "92-end-user-devices.css",
+    "93-end-user-alerts.css",
+    "94-end-user-energy.css",
+    "95-end-user-revenue.css",
+    "97-end-user-reports.css",
+    "98-end-user-profile.css",
+    "80-end-user-auth.css",
+    "96-end-user-density-spacing.css",
+    "components/responsive-accessibility.css"
+  ]
+}

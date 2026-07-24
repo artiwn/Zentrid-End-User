@@ -1,0 +1,185 @@
+/* End User density and spacing polish.
+   The shared admin card primitive uses a 300px minimum for large workspaces;
+   owner-facing cards should size to their actual content. */
+.end-user-page .panel {
+  min-height: 0;
+}
+
+/* Match the established Zentrid freshness control used by the admin shells. */
+.end-user-page button.freshness-card {
+  appearance: none;
+  min-width: 210px;
+  min-height: 68px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 15px;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  border: 0;
+  border-radius: 18px;
+  background: rgba(13, 28, 50, .72);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, .18);
+  cursor: pointer;
+}
+.end-user-page button.freshness-card strong,
+.end-user-page button.freshness-card small {
+  display: block;
+  min-width: 0;
+  line-height: 1.35;
+}
+.end-user-page button.freshness-card strong {
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 850;
+}
+.end-user-page button.freshness-card small {
+  margin-top: 3px;
+  color: var(--muted);
+  font-size: 11px;
+}
+.end-user-page button.freshness-card:hover {
+  transform: translateY(-1px);
+  background: rgba(17, 34, 59, .86);
+  box-shadow: 0 16px 38px rgba(0, 0, 0, .22);
+}
+.end-user-page button.freshness-card:focus-visible {
+  outline: 3px solid rgba(34, 211, 238, .7);
+  outline-offset: 3px;
+}
+
+/* Compact owner-facing status and KPI surfaces. */
+.end-user-page .owner-status-card {
+  min-height: 0;
+  padding: 18px 20px;
+}
+.end-user-page .owner-status-icon {
+  width: 58px;
+  height: 58px;
+  border-radius: 18px;
+  font-size: 27px;
+}
+.end-user-page .owner-status-copy h2 {
+  margin-bottom: 6px;
+}
+.end-user-page .owner-kpi-grid .kpi-card,
+.end-user-page .owner-revenue-kpi-grid .kpi-card,
+.end-user-page .owner-revenue-payment-kpis .kpi-card,
+.end-user-page .owner-alert-detail-kpis .kpi-card {
+  min-height: 136px;
+  padding: 18px;
+}
+.end-user-page .kpi-icon {
+  margin-bottom: 10px;
+}
+
+/* Let two-column sections follow their content instead of stretching the shorter card. */
+.end-user-page .owner-overview-grid,
+.end-user-page .owner-lower-grid,
+.end-user-page .owner-plant-main-grid,
+.end-user-page .owner-plant-secondary-grid,
+.end-user-page .owner-plant-bottom-grid,
+.end-user-page .owner-device-detail-grid,
+.end-user-page .owner-alert-detail-grid,
+.end-user-page .owner-alert-help-grid,
+.end-user-page .owner-energy-main-grid,
+.end-user-page .owner-energy-secondary-grid,
+.end-user-page .owner-revenue-overview-grid,
+.end-user-page .owner-revenue-lower-grid,
+.end-user-page .owner-revenue-settlement-grid,
+.end-user-page .owner-revenue-agreement-grid {
+  align-items: start;
+}
+
+/* Remove page-specific artificial height where the content already determines it. */
+.end-user-page .owner-chart-card,
+.end-user-page .owner-settlement-card,
+.end-user-page .owner-plant-quick-actions,
+.end-user-page .owner-device-card,
+.end-user-page .owner-device-summary-card,
+.end-user-page .owner-device-purpose-card,
+.end-user-page .owner-alert-support-card,
+.end-user-page .owner-alert-support-detail {
+  min-height: 0;
+}
+.end-user-page .owner-positive-state,
+.end-user-page .owner-plant-positive-state,
+.end-user-page .owner-device-positive-state,
+.end-user-page .owner-device-empty {
+  min-height: 150px;
+}
+
+/* Compact period/action bars that were inheriting the shared 300px panel height. */
+.end-user-page .owner-energy-period-bar {
+  min-height: 0;
+  padding: 14px 16px;
+  margin-bottom: 14px;
+  align-items: center;
+}
+.end-user-page .owner-device-detail-actions,
+.end-user-page .owner-alert-detail-actions {
+  min-height: 0;
+  padding: 16px 18px;
+  align-items: center;
+  border-radius: 20px;
+}
+.end-user-page .owner-device-alerts-card + .owner-device-detail-actions {
+  margin-top: 16px;
+}
+.end-user-page .owner-device-detail-actions h2,
+.end-user-page .owner-alert-detail-actions h2 {
+  margin: 0;
+}
+.end-user-page .owner-device-detail-actions p,
+.end-user-page .owner-alert-detail-actions p {
+  margin-top: 6px;
+  line-height: 1.5;
+}
+
+/* Consistent spacing inside owner cards and information blocks. */
+.end-user-page .panel-head {
+  margin-bottom: 14px;
+}
+.end-user-page .panel-head p {
+  margin-top: 5px;
+  line-height: 1.45;
+}
+.end-user-page .panel > h2 + p,
+.end-user-page .panel > h3 + p,
+.end-user-page .panel > .friendly-note + *,
+.end-user-page .panel > p + .information-grid,
+.end-user-page .panel > p + .owner-period-pills {
+  margin-top: 8px;
+}
+.end-user-page .information-grid > div {
+  min-height: 0;
+}
+.end-user-page .information-grid > div > span,
+.end-user-page .information-grid > div > strong,
+.end-user-page .information-grid > div > small {
+  display: block;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.end-user-page .information-grid > div > span + strong {
+  margin-top: 5px;
+}
+.end-user-page .information-grid > div > strong + small {
+  margin-top: 4px;
+}
+
+@media (max-width: 760px) {
+  .end-user-page button.freshness-card {
+    width: 100%;
+    min-width: 0;
+    min-height: 62px;
+  }
+  .end-user-page .owner-status-card {
+    padding: 16px;
+  }
+  .end-user-page .owner-device-detail-actions,
+  .end-user-page .owner-alert-detail-actions {
+    padding: 16px;
+  }
+}

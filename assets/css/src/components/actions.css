@@ -1,0 +1,50 @@
+/* Shared action components — final global button styles. */
+.primary-action,
+.secondary-action {
+  min-height: 38px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.primary-action {
+  border: 1px solid rgba(45,212,191,.42);
+  background: linear-gradient(135deg, rgba(20,184,166,.24), rgba(14,165,233,.16));
+  color: #dffcff;
+  border-radius: 14px;
+  padding: 11px 15px;
+  box-shadow: 0 12px 30px rgba(8,145,178,.12);
+}
+
+.primary-action:hover {
+  transform: translateY(-1px);
+  border-color: rgba(45,212,191,.7);
+}
+
+.secondary-action {
+  padding: 0 14px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: rgba(15,28,49,.78);
+  color: #dce9f7;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.secondary-action:hover {
+  transform: translateY(-1px);
+  border-color: rgba(34,211,238,.35);
+  background: rgba(34,211,238,.09);
+}
+
+.danger-action {
+  border-color: rgba(251,113,133,.35) !important;
+  color: #fecdd3 !important;
+  background: rgba(127,29,29,.20) !important;
+}
+
+.danger-action:hover {
+  border-color: rgba(248,113,113,.42) !important;
+  background: rgba(127,29,29,.32) !important;
+}

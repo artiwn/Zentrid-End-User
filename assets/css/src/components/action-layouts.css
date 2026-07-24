@@ -1,0 +1,85 @@
+/* Shared action-container layouts. Page-specific positioning stays in page layers. */
+.page-actions,
+.inline-actions,
+.integration-page-actions {
+  display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+}
+
+.hero-actions {
+  display: flex; align-items: center; gap: 10px; flex-wrap: wrap; justify-content: flex-end;
+}
+
+.drawer-actions {
+  display: flex; gap: 10px; margin-top: 14px; min-width: 0; flex-wrap: wrap;
+}
+
+.modal-actions {
+  display: flex; justify-content: flex-end; gap: 10px;
+  margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--line);
+}
+
+.row-actions,
+.mini-row-actions {
+  display: flex; gap: 7px; min-width: 0; flex-wrap: wrap;
+}
+
+.panel-head > .row-actions,
+.panel-head > .mini-row-actions {
+  flex: 0 0 auto;
+}
+
+.vertical-actions {
+  display: grid; gap: 10px;
+}
+
+.inline-form-actions {
+  display: flex; align-items: end; justify-content: flex-end;
+}
+
+@media (max-width: 900px) {
+  .hero-actions { justify-content: flex-start; }
+}
+
+/* Responsive ownership for shared action containers. */
+@media (max-width: 768px) {
+  .modal-actions,
+  .drawer-actions {
+    position: sticky;
+    bottom: -1px;
+    z-index: 3;
+    margin-left: -4px;
+    margin-right: -4px;
+    padding: 14px 4px calc(4px + env(safe-area-inset-bottom));
+    background: linear-gradient(180deg, rgba(8,18,34,0), rgba(8,18,34,.98) 28%);
+    flex-wrap: wrap;
+  }
+  .modal-actions > button,
+  .drawer-actions > button,
+  .modal-actions > a,
+  .drawer-actions > a { min-height: 44px; flex: 1 1 150px; }
+}
+
+@media (max-width: 620px) {
+  .page-actions,
+  .hero-actions,
+  .integration-page-actions,
+  .inline-actions,
+  .modal-actions,
+  .drawer-actions {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr);
+    width: 100%;
+  }
+  .page-actions > button,
+  .hero-actions > button,
+  .integration-page-actions > button,
+  .inline-actions > button,
+  .modal-actions > button,
+  .drawer-actions > button,
+  .page-actions > a,
+  .hero-actions > a,
+  .integration-page-actions > a,
+  .inline-actions > a,
+  .modal-actions > a,
+  .drawer-actions > a { width: 100%; min-height: 44px; }
+}

@@ -1,0 +1,32 @@
+/* Shared Zentrid form primitives. Page-specific grids and field variants remain in their owning layers. */
+.toolbar input, .toolbar select, label input, label select, textarea {
+  width: 100%; min-height: 42px; border-radius: 13px; border: 1px solid rgba(148,163,184,.16); background: rgba(7,17,31,.72); color: var(--text); padding: 0 12px; outline: none;
+}
+.toolbar input { min-width: 260px; }
+textarea { min-height: 84px; resize: vertical; padding: 12px; }
+.form-grid { display: block; }
+label { display: grid; gap: 7px; color: #cbd8e7; font-size: 12px; font-weight: 750; }
+label.full, .full { grid-column: 1 / -1; }
+label.check { grid-template-columns: 18px 1fr; align-items: center; min-height: 42px; border: 1px solid rgba(148,163,184,.13); background: rgba(255,255,255,.035); border-radius: 13px; padding: 10px 12px; }
+label.check input { width: 18px; min-height: 18px; }
+
+/* Accessible focus and compact-screen form behavior. */
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid rgba(34,211,238,.72);
+  outline-offset: 3px;
+}
+
+@media (max-width: 920px) {
+  .toolbar input,
+  .toolbar select { min-width: 0; flex: 1 1 210px; }
+}
+
+@media (max-width: 620px) {
+  input,
+  select,
+  textarea { font-size: 16px; }
+  .toolbar input,
+  .toolbar select { flex-basis: 100%; }
+}
