@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <title>Zentrid — Tenant Onboarding</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body class="public-onboarding-page">
+  <main class="public-shell">
+    <header class="public-header">
+      <div class="brand"><div class="brand-mark">Z</div><div>Zentrid<br><span class="hint">Tenant onboarding</span></div></div>
+      <div class="secure-badge">● Secure external form · No admin dashboard access</div>
+    </header>
+
+    <section class="hero">
+      <div class="card">
+        <p class="eyebrow">Complete company profile</p>
+        <h1>Tenant onboarding form</h1>
+        <p class="muted">Please provide your legal, contact, portal and compliance information. Zentrid administrators will review your submission before creating the final tenant record.</p>
+        <div class="summary-grid" id="inviteSummary"></div>
+      </div>
+      <div class="card">
+        <p class="eyebrow">What happens next</p>
+        <div class="summary-grid">
+          <div><span>1</span><strong>Fill company data</strong><p class="hint">Legal identity, address, contacts and communication preferences.</p></div>
+          <div><span>2</span><strong>Upload documents</strong><p class="hint">Registration, tax, NDA, DPA or authorization files if required.</p></div>
+          <div><span>3</span><strong>Submit for review</strong><p class="hint">Your profile moves to the admin approval queue.</p></div>
+          <div><span>4</span><strong>Portal setup</strong><p class="hint">After approval, Zentrid can create portal access and related records.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card" id="formCard">
+      <div class="steps" id="steps"></div>
+      <form id="onboardingForm">
+        <div class="step active" data-step="0">
+          <label>Legal Name <input name="legalName" required placeholder="ABC Solar Energy LLC" /></label>
+          <label>Trade Name <input name="tradeName" placeholder="ABC Solar" /></label>
+          <label>Registration Number <input name="registrationNumber" required /></label>
+          <label>Tax ID / VAT Number <input name="taxId" required /></label>
+          <label>Tenant Type
+            <select name="tenantType"><option>Owner</option><option>Operator</option><option>Investor</option><option>EPC</option><option>O&M</option><option>Utility</option></select>
+          </label>
+          <label>Webplant <input name="webplant" type="url" placeholder="https://..." /></label>
+        </div>
+        <div class="step" data-step="1">
+          <label>Legal Country <input name="country" required /></label>
+          <label>State / Region <input name="region" /></label>
+          <label>City <input name="city" required /></label>
+          <label>Street Address <input name="street" required /></label>
+          <label>Building Number <input name="building" /></label>
+          <label>Postal Code <input name="postalCode" /></label>
+          <label class="check full"><input type="checkbox" name="sameAddress" checked /> Business address is the same as legal address</label>
+        </div>
+        <div class="step" data-step="2">
+          <div class="full contact-list" id="contactList">
+            <div class="contact-card" data-contact-card>
+              <div class="contact-head"><strong>Contact 1</strong><span class="hint">Primary contact is required</span></div>
+              <label>Contact Full Name <input name="contactName" data-contact-field="fullName" required /></label>
+              <label>Position <input name="contactPosition" data-contact-field="position" /></label>
+              <label>Department
+                <select name="department" data-contact-field="department"><option>Executive</option><option>Finance</option><option>Legal</option><option>Technical</option><option>Operations</option></select>
+              </label>
+              <label>Contact Role
+                <select name="contactRole" data-contact-field="role"><option>Primary</option><option>Billing</option><option>Legal</option><option>Technical</option><option>Commercial</option></select>
+              </label>
+              <label>Email <input name="email" data-contact-field="email" type="email" required /></label>
+              <label>Mobile Phone <input name="phone" data-contact-field="phone" type="tel" required /></label>
+              <label>Preferred Language <select name="language" data-contact-field="language"><option>English</option><option>Armenian</option><option>Russian</option></select></label>
+              <label>Preferred Contact Method <select name="contactMethod" data-contact-field="contactMethod"><option>Email</option><option>Phone</option><option>Portal</option></select></label>
+            </div>
+          </div>
+          <button type="button" class="add-contact full" id="addContactBtn">+ Add another contact</button>
+          <p class="hint full">Add billing, legal, technical or commercial contacts if different people should receive Zentrid communications.</p>
+        </div>
+        <div class="step" data-step="3">
+          <label>Portal Enabled <select name="portalEnabled"><option>Yes</option><option>No</option></select></label>
+          <label>Default User Role <select name="defaultRole"><option>Viewer</option><option>Manager</option><option>Admin</option></select></label>
+          <label>Maximum Users <input name="maxUsers" type="number" min="1" value="5" /></label>
+          <label>User Provisioning <select name="provisioning"><option>Manual</option><option>Automatic</option></select></label>
+          <label>Preferred Time Zone
+            <select name="timezone" required>
+              <option value="Asia/Yerevan">Armenia — Asia/Yerevan (UTC+4)</option>
+              <option value="Europe/Berlin">Central Europe — Europe/Berlin</option>
+              <option value="Europe/Madrid">Spain — Europe/Madrid</option>
+              <option value="Europe/London">United Kingdom — Europe/London</option>
+              <option value="Asia/Dubai">UAE — Asia/Dubai</option>
+              <option value="Asia/Tbilisi">Georgia — Asia/Tbilisi</option>
+              <option value="UTC">UTC</option>
+            </select>
+            <span class="field-note">Choose your business location. Zentrid will store the technical timezone code automatically.</span>
+          </label>
+          <label>Business Hours
+            <select name="businessHours" required>
+              <option>09:00–18:00, Monday–Friday</option>
+              <option>08:00–17:00, Monday–Friday</option>
+              <option>10:00–19:00, Monday–Friday</option>
+              <option>09:00–17:00, Monday–Friday</option>
+              <option>09:00–18:00, Monday–Saturday</option>
+              <option>24/7 operations</option>
+            </select>
+          </label>
+          <label class="check"><input type="checkbox" name="platformNotifications" checked /> Receive platform notifications</label>
+          <label class="check"><input type="checkbox" name="invoiceNotifications" checked /> Receive invoice notifications</label>
+        </div>
+        <div class="step" data-step="4">
+          <label>Data Processing Agreement <select name="dpa"><option>Signed</option><option>Not Signed</option></select></label>
+          <label>NDA Status <select name="nda"><option>Signed</option><option>Not Signed</option></select></label>
+          <label>Confidentiality Level <select name="confidentiality"><option>Standard</option><option>Restricted</option><option>Critical</option></select></label>
+          <label>Consent Expiry Date <input name="consentExpiry" type="date" /></label>
+          <div class="doc-grid full">
+            <label>Registration Certificate <input name="registrationFile" type="file" /></label>
+            <label>Tax Registration <input name="taxFile" type="file" /></label>
+            <label>NDA <input name="ndaFile" type="file" /></label>
+            <label>Power of Attorney <input name="poaFile" type="file" /></label>
+          </div>
+          <label class="full">Additional Notes <textarea name="notes" placeholder="Anything the Zentrid team should know"></textarea></label>
+        </div>
+        <div class="actions full">
+          <button type="button" class="ghost" id="prevBtn">Back</button>
+          <div>
+            <button type="button" id="nextBtn">Next</button>
+            <button type="submit" class="primary" id="submitBtn" hidden>Submit for approval</button>
+          </div>
+        </div>
+      </form>
+    </section>
+
+    <section class="card success-panel" id="successPanel" hidden>
+      <div class="success-icon">✓</div>
+      <h2>Submitted for approval</h2>
+      <p class="muted">Your company profile has been sent to Zentrid administrators. You do not need access to the admin dashboard.</p>
+    </section>
+  </main>
+
+    <script src="assets/js/zentrid-locale.js"></script>
+    <script src="assets/js/security-policy.js"></script>
+<script src="assets/js/release-observability.js"></script>
+  <script src="assets/js/page-scripts/root-client-onboarding.js"></script>
+  <script src="assets/js/zentrid-normalization.js"></script>
+  <script src="assets/js/ui-normalization-binding.js"></script>
+  <script src="assets/js/api-only-policy.js"></script>
+</body>
+</html>
